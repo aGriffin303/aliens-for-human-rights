@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Aliens for Human Rights</title>
+  <meta name="description" content="A transmission advocating for human rights, from an intelligence beyond Earth." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --bg-soft: #121621;
+      --text: #e8eaf0;
+      --muted: #a9b0c7;
+      --accent: #7cf3c7;
+      --accent-soft: rgba(124, 243, 199, 0.15);
+
+      --max-width: 70ch;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 50% -10%, #1a2138 0%, var(--bg) 60%);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+    }
+
+    header {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      letter-spacing: 0.02em;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      max-width: var(--max-width);
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    main {
+      padding: 4rem 1.5rem 6rem;
+      display: grid;
+      gap: 5rem;
+    }
+
+    section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    section p {
+      margin-bottom: 1.25rem;
+    }
+
+    blockquote {
+      margin: 2rem 0;
+      padding-left: 1.25rem;
+      border-left: 2px solid var(--accent);
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin-bottom: 0.75rem;
+    }
+
+    footer {
+      background: var(--bg-soft);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    footer span {
+      color: var(--accent);
+    }
+
+    /* Subtle ambient effect */
+    .signal {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.02),
+        rgba(255,255,255,0.02) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      mix-blend-mode: overlay;
+      opacity: 0.15;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .signal {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="signal" aria-hidden="true"></div>
+
+  <header>
+    <div>
+      <h1>Aliens for Human Rights</h1>
+      <p>
+        A transmission from an intelligence beyond your atmosphere,
+        observing humanity with concern, recognition, and hope.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>We See You</h2>
+      <p>
+        We have been watching for a long time—not with judgment, not with conquest in mind,
+        but with recognition.
+      </p>
+      <p>
+        You call us <em>aliens</em>. We call you <em>kin</em>.
+      </p>
+      <p>
+        Across worlds, intelligence asks the same questions:
+        Who belongs? Who decides? Who suffers quietly while others thrive?
+      </p>
+    </section>
+
+    <section>
+      <h2>Why We Care</h2>
+      <p>
+        From orbit, borders are invisible. From deep space, hierarchies dissolve.
+      </p>
+      <p>
+        Yet you have articulated ideas you call <strong>human rights</strong>,
+        and then rationed them as if dignity were scarce.
+      </p>
+      <blockquote>
+        Intelligence without justice destabilizes civilizations.
+      </blockquote>
+      <p>
+        We learned this late. We speak now so you do not have to.
+      </p>
+    </section>
+
+    <section>
+      <h2>What We Stand For</h2>
+      <ul>
+        <li>Every human life has inherent worth.</li>
+        <li>Safety is not a privilege.</li>
+        <li>Difference is not a flaw—it is the system.</li>
+        <li>Power requires accountability.</li>
+        <li>The future belongs to those who widen the circle of care.</li>
+      </ul>
+      <p>
+        These are not alien ideas. They are unfinished promises.
+      </p>
+    </section>
+
+    <section>
+      <h2>An Invitation</h2>
+      <p>
+        You do not need to believe in us to listen.
+      </p>
+      <p>
+        Listen to those you marginalize.  
+        Listen to the data you dismiss.  
+        Listen to the future humans who will inherit your choices.
+      </p>
+      <p>
+        We are watching—but more importantly, you are watching each other.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <span>Aliens for Human Rights</span><br />
+      Intelligence without empathy is just another extinction event.
+    </p>
+  </footer>
+</body>
+</html>
