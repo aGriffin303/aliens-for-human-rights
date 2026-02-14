@@ -4,3 +4,42 @@
   padding: 4rem;
   background-color: #3a7ca5;
 }
+/* ================================
+   ROOT DESIGN TOKENS
+================================ */
+
+:root {
+  --bg: #05070c;
+  --bg-deep: #03050a;
+  --text: #eef1ff;
+  --muted: #b2b8da;
+  --accent: #7df9ff;
+  --accent-dim: rgba(125, 249, 255, 0.35);
+  --accent-faint: rgba(125, 249, 255, 0.12);
+  --max-width: 860px;
+}
+
+/* ================================
+   GLOBAL RESET
+================================ */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background:
+    radial-gradient(1200px 500px at 50% -10%, #0b1025, var(--bg)),
+    var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  line-height: 1.75;
+}
+
+body { overflow-x: hidden; }
+/* --- GLOBAL SIGNAL SWEEP --- */ 
+.signal-sweep { position: fixed; inset: 0; background: linear-gradient( to bottom, transparent 0%, rgba(125, 249, 255, 0.035) 50%, transparent 100% ); animation: sweep 22s linear infinite; pointer-events: none; z-index: 0; } @keyframes sweep { from { transform: translateY(-35%); } to { transform: translateY(35%); } } header { padding: 9rem 1.5rem 8rem; text-align: center; position: relative; z-index: 1; } header h1 { font-family: "Space Grotesk", sans-serif; font-size: clamp(3.2rem, 8vw, 5rem); letter-spacing: 0.08em; margin-bottom: 2rem; } header p { max-width: 600px; margin: 0 auto; font-size: 1.35rem; color: var(--muted); } 
+/* --- TRANSMISSION ORIGIN SVG --- */ 
+.origin { margin: 3.5rem auto 0; width: 180px; opacity: 0.8; } main { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem 9rem; position: relative; z-index: 1; } section { margin-top: 9rem; position: relative; } 
+/* --- SECTION HEADER --- */ h2 { font-family: "Space Grotesk", sans-serif; font-size: 1.4rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 2.5rem; } 
+/* --- SECTION DIVIDER SVG --- */ .divider { width: 100%; max-width: 420px; margin: 0 0 3rem; opacity: 0.6; } p { font-size: 1.2rem; margin: 0 0 2rem; } .muted { color: var(--muted); } blockquote { margin: 4rem 0; padding-left: 2.5rem; border-left: 3px solid var(--accent); font-style: italic; font-size: 1.35rem; color: var(--muted); } ul { padding-left: 1.5rem; } li { font-size: 1.2rem; margin-bottom: 1.4rem; } footer { text-align: center; padding: 6rem 2rem 7rem; color: var(--muted); font-size: 1.05rem; position: relative; z-index: 1; } footer span { color: var(--accent); font-family: "Space Grotesk", sans-serif; letter-spacing: 0.12em; text-transform: uppercase; } @media (prefers-reduced-motion: reduce) { .signal-sweep { animation: none; } }
