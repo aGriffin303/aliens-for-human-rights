@@ -4,7 +4,7 @@
 ================================ */
 
 :root {
-  --bg: #05070c;
+  --bg: #03050a;
   --bg-deep: #03050a;
   --text: #f4f6ff;
   --muted: #b2b8da;
@@ -32,6 +32,86 @@ html, body {
 }
 
 body { overflow-x: hidden; }
+
+.accent {
+  color: var(--accent);
+}
+
+.section-emphasis {
+  position: relative;
+  border: 1px solid var(--accent-dim);
+  background: linear-gradient(
+    180deg,
+    rgba(125,249,255,0.15),
+    rgba(125,249,255,0.03)
+  );
+  padding: 4rem;
+  border-radius: 1.2rem;
+  backdrop-filter: blur(6px);
+}
+
+section {
+  margin-top: 6rem;
+}
+
+section:first-of-type {
+  margin-top: 4rem;
+}
+
+section:last-of-type {
+  margin-bottom: 6rem;
+}
+section h2 {
+  margin-bottom: 3rem;
+}
+.transmission p {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+.small {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.1), transparent),
+    radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,0.08), transparent),
+    radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.06), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+section:nth-of-type(3) {
+  border-left: 4px solid var(--accent);
+  padding-left: 2rem;
+}
+.transmission p:first-child,
+section h2 + p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+body::before {
+  content: "";
+  position: fixed;
+  width: 900px;
+  height: 900px;
+  top: -200px;
+  right: -300px;
+  background: radial-gradient(
+    circle at center,
+    var(--accent-faint) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
 
 /* ================================
    SIGNAL SWEEP
@@ -70,7 +150,6 @@ main {
 }
 
 section {
-  margin-top: 9rem;
   position: relative;
 }
 
@@ -79,7 +158,7 @@ section {
 ================================ */
 
 header {
-  padding: 10rem 1.5rem 9rem;
+  padding: 6rem 1.5rem 9rem;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -87,13 +166,25 @@ header {
 
 header h1 {
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(3.2rem, 8vw, 5rem);
-  letter-spacing: 0.08em;
-  margin-bottom: 2rem;
+  font-size: clamp(3.5rem, 9vw, 6rem);
+  letter-spacing: 0.1em;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    var(--accent) 120%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
   text-shadow:
-    0 0 40px var(--accent-faint),
-    0 0 80px var(--accent-dim);
+    0 0 60px var(--accent-faint),
+    0 0 120px var(--accent-dim);
 }
+
 
 header p {
   max-width: 600px;
