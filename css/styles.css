@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /* ================================
    DESIGN TOKENS
 ================================ */
@@ -32,23 +33,35 @@ html, body {
 }
 
 body { overflow-x: hidden; }
-
+a:link, a:visited {color:#fff; text-decoration: underline;}
+a:hover, a:active {color: var(--accent); text-decoration: none;}
 .accent {
   color: var(--accent);
 }
 
 .section-emphasis {
   position: relative;
-  border: 1px solid var(--accent-dim);
+  padding: 6rem 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+}
+
+.section-emphasis::before {
+  content: "";
+  position: absolute;
+  inset: -6rem -4rem;
   background: linear-gradient(
     180deg,
-    rgba(125,249,255,0.15),
-    rgba(125,249,255,0.03)
+    rgba(125,249,255,0.18),
+    rgba(125,249,255,0.05),
+    transparent 85%
   );
-  padding: 4rem;
-  border-radius: 1.2rem;
-  backdrop-filter: blur(6px);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(40px);
 }
+
 
 section {
   margin-top: 6rem;
@@ -63,10 +76,6 @@ section:last-of-type {
 }
 section h2 {
   margin-bottom: 3rem;
-}
-.transmission p {
-  font-size: 1.4rem;
-  font-weight: 300;
 }
 .small {
   font-size: 0.9rem;
@@ -85,7 +94,9 @@ body::after {
 }
 section:nth-of-type(3) {
   border-left: 4px solid var(--accent);
+  border-right: 4px solid var(--accent);
   padding-left: 2rem;
+  padding-right: 2rem;
 }
 .transmission p:first-child,
 section h2 + p {
@@ -93,6 +104,7 @@ section h2 + p {
   font-weight: 400;
   color: #ffffff;
 }
+
 body::before {
   content: "";
   position: fixed;
@@ -111,31 +123,46 @@ body::before {
   z-index: 0;
 }
 
+.right {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  color: #ffffff;
 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-/* ================================
-   SIGNAL SWEEP
-================================ */
-
-.signal-sweep {
-  position: fixed;
-  inset: 0;
-  background:
-    linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(125, 249, 255, 0.035) 50%,
-      transparent 100%
-    );
-  animation: sweep 22s linear infinite;
-  pointer-events: none;
-  z-index: 0;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 900ms ease, transform 900ms ease;
 }
 
-@keyframes sweep {
-  from { transform: translateY(-35%); }
-  to   { transform: translateY(35%); }
+
+.right span {
+  display: block;
+  font-family: Inter, sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #e6f4f1;
+  margin-top: 0.8rem;
 }
+
+.right.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.rights-list {
+  margin-top: 4rem;
+}
+
+
+
 
 /* ================================
    LAYOUT
@@ -192,6 +219,34 @@ header p {
   font-size: 1.35rem;
   color: var(--muted);
 }
+.right.visible {
+  transition-delay: 0.1s;
+}
+.baseline-closing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.baseline-closing p:first-child {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+.signal-line {
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #7df9ff;
+}
+
+
 
 /* ================================
    TYPOGRAPHY
@@ -247,8 +302,4 @@ footer span {
   font-family: "Space Grotesk", sans-serif;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .signal-sweep { animation: none; }
 }
