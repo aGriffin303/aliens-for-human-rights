@@ -500,7 +500,16 @@ footer span {
   }
 
   .interference-heading {
-    font-size: clamp(2rem, 10vw, 4rem);
+    font-size: clamp(1.6rem, 8vw, 2.5rem);
+    letter-spacing: 0.06em;
+  }
+
+  /* Disable typewriter on mobile — allow text to wrap normally */
+  .typewriter {
+    white-space: normal;
+    width: auto;
+    border-right: none;
+    animation: none;
   }
 
   main {
