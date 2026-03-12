@@ -207,6 +207,11 @@ body::before {
   overflow: visible;
 }
 
+.hero-svg img {
+  width: 100%;
+  height: auto;
+}
+
 /* ================================
    MICRO-ANIMATIONS
 ================================ */
@@ -313,6 +318,7 @@ header p {
   white-space: nowrap;
   border-right: 2px solid var(--accent);
   width: 0;
+  max-width: 100%;
   animation:
     typing 2s steps(50, end) 0.8s forwards,
     blink 700ms step-end 0.8s 4,
@@ -413,4 +419,103 @@ footer span {
   font-family: "Space Grotesk", sans-serif;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 767.98px) {
+  header {
+    padding: 4rem 1rem 5rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  section {
+    margin-top: 4rem;
+  }
+
+  .section-emphasis {
+    padding: 3rem 0;
+  }
+
+  .interference-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .right {
+    min-height: 70vh;
+    padding: 3rem 1rem;
+  }
+
+  .baseline-closing {
+    min-height: 70vh;
+  }
+
+  main {
+    padding: 0 1.5rem 5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  header {
+    padding: 3rem 1rem 4rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  section {
+    margin-top: 3rem;
+  }
+
+  section:last-of-type {
+    margin-bottom: 4rem;
+  }
+
+  section:nth-of-type(3) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .right {
+    min-height: 60vh;
+    padding: 2.5rem 1rem;
+  }
+
+  .baseline-closing {
+    min-height: 60vh;
+  }
+
+  .interference-section {
+    padding: 4rem 1rem;
+  }
+
+  .interference-heading {
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+
+  main {
+    padding: 0 1rem 4rem;
+  }
+
+  footer {
+    padding: 4rem 1rem 5rem;
+  }
+
+  /* Tone down the fixed bg glow on small screens */
+  body::before {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    right: -150px;
+  }
 }
