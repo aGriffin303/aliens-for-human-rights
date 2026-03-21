@@ -518,3 +518,9 @@ footer span {
     right: -150px;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  #animated-heading {
+    /* skip animation, just show final text */
+  }
+}
