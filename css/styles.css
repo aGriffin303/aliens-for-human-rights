@@ -168,10 +168,10 @@ body::before {
 .right span {
   display: block;
   font-family: Inter, sans-serif;
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--accent-dim);
+  color: #fff;
   margin-top: 1.8rem;
 }
 
