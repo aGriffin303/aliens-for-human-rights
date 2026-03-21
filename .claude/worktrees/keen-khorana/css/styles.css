@@ -139,7 +139,7 @@ body::before {
 }
 
 .right {
-  min-height: 60vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -311,34 +311,41 @@ header p {
   color: var(--muted);
 }
 
-/* Transmission signal lock-in */
+/* Typewriter */
 .typewriter {
   display: inline-block;
-  animation: signal-in 2.8s ease-out 0.4s both;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--accent);
+  width: 0;
+  max-width: 100%;
+  animation:
+    typing 2s steps(50, end) 0.8s forwards,
+    blink 700ms step-end 0.8s 4,
+    hide-cursor 100ms ease 3.8s forwards;
 }
 
-@keyframes signal-in {
-  0%   { opacity: 0; }
-  6%   { opacity: 0.85; }
-  9%   { opacity: 0; }
-  14%  { opacity: 0.7; }
-  17%  { opacity: 0.05; }
-  23%  { opacity: 0.9; }
-  27%  { opacity: 0.2; }
-  33%  { opacity: 0.8; }
-  40%  { opacity: 0.4; }
-  50%  { opacity: 1; }
-  55%  { opacity: 0.6; }
-  65%  { opacity: 1; }
-  100% { opacity: 1; }
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: var(--accent); }
+  50%       { border-color: transparent; }
+}
+
+@keyframes hide-cursor {
+  to { border-color: transparent; }
 }
 
 .baseline-closing {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 4rem;
 }
 
 .baseline-closing p:first-child {
@@ -350,7 +357,7 @@ header p {
 
 .signal-line {
   margin-top: 3rem;
-  font-size: 2rem;
+  font-size: 1.2rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #7df9ff;
@@ -364,7 +371,7 @@ header p {
 
 h2 {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 2rem;
+  font-size: 1.4rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--accent);
@@ -497,9 +504,12 @@ footer span {
     letter-spacing: 0.06em;
   }
 
-  /* Allow transmission text to wrap on small screens */
+  /* Disable typewriter on mobile — allow text to wrap normally */
   .typewriter {
     white-space: normal;
+    width: auto;
+    border-right: none;
+    animation: none;
   }
 
   main {
